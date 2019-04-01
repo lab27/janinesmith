@@ -1,0 +1,19 @@
+en:
+  description: Janine Smith, Singer
+  menu: 
+    home: 
+      name: Home
+      url: /en/
+    gospelswingers:
+      name: Gospelswingers
+      url: /en/gospelswingers/
+  
+de:
+  description: Janine Smith, Sängerin
+  menu: 
+    home: 
+      name: Start
+      url: /
+    gospelswingers:
+      name: Gospelswingers
+      url: /gospelswingers/

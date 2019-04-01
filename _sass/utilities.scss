@@ -1,0 +1,20 @@
+.u-centered {
+    text-align: center;
+}
+
+.u-hide-small {
+    @include media-query($on-palm) {
+      display: none;
+    }
+}
+
+.u-graphic {
+  width: 100%;
+  max-width: 10rem;
+  margin: 0 auto;
+}
+
+.u-content-column {
+  max-width: var(--l-max-width, 800px);
+  margin: 0 auto;
+}

@@ -1,0 +1,25 @@
+.animated.slideDown {
+    transform:none;
+}
+
+.headroom {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: var(--l-body-padding);
+
+    .menu-open & {
+        top: 0;
+    }
+}
+
+.animated {
+    will-change: transform;
+    transition: .4s transform;
+}
+
+.animated.slideUp {
+    transform: translateY(-200%);
+}

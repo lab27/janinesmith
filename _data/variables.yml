@@ -1,0 +1,40 @@
+base-font-weight: 400
+c-logo: '#444'
+
+c-background: '#f9f9f9'
+c-primary: '#111'
+c-reverse: '#fff'
+c-text: '#333'
+c-fun2: '#ff259b'
+c-fun: '#b7f9ea'
+c-fun: '#cffff4'
+c-content-background: '#f9f9f9'
+c-light-gray: '#d9d9d9'
+c-gray: '#999'
+c-success: 'var(--c-lime)'
+c-lime: '#cdff06'
+c-link: 'var(--c-primary, #111)'
+c-buy: 'dodgerblue'
+c-smoke: '#f1f1f1'
+c-menu: '#f9f9f9'
+c-footer: 'var(--flash--a)'
+c-hover: 'var(--flash--a)'
+
+flash--a: '#FF44A4'
+flash--a-shadow: '#e9b945'
+flash--b: 'var(--c-fun)'
+flash--b-shadow: '#9ddfd0'
+alt: '#999'
+c-ticker: "white"
+c-ticker-bg: "var(--c-text)"
+ticker-height: 3rem
+l-max-width: '800px'
+box-shadow: '0 10px 25px rgba(0,0,0,.1)'
+c-frame: 'var(--flash--a)'
+c-cta: 'var(--flash--a)'
+
+# fonts
+flash-1-fontsize: '75px'
+flash-2-fontsize: '50px'
+
+u-easing: "cubic-bezier(0.23, 1, 0.32, 1)"
