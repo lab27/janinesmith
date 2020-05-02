@@ -14,7 +14,7 @@ sans-serif;
 $base-font-size : 18px !default;
 $base-font-weight: var(--base-font-weight) !default;
 $small-font-size : $base-font-size * 0.875 !default;
-$base-line-height: 1.778 !default;
+$base-line-height: 1.8 !default;
 $spacing-unit : 30px !default;
 $text-color : #333 !default;
 $grey-color : #828282 !default;
@@ -48,5 +48,4 @@ $on-desktop : 1400px !default;
 "minima/syntax-highlighting",
 "fluid-type",
 "overrides",
-"utilities",
-"headroom";
+"utilities";

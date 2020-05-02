@@ -1,5 +1,5 @@
  <footer class="footer">
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+    <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
     <p class="site-slogan"><em>{{ site.data.translations[page.lang].site-slogan}}</em></p>
     <p class="lang-selector">
       {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
@@ -8,7 +8,7 @@
       {%- endif -%}
       {% endfor %}
     </p>
-    <div class="footer--menu">
+    <!-- <div class="footer--menu">
       <div class="footer--menu-col footer--menu-col1">
         {% for menu in site.data.translations[page.lang].menu limit: 3 %}
         <p class="footer--menu__item{% if menu[1].url == page.url %} footer--menu__item--active{% endif %}">
@@ -30,11 +30,11 @@
         </p>
         {% endfor %}
       </div>
-    </div>
+    </div> -->
     <p class="footer--copyright">
       &copy; {{ 'now' | date: "%Y" }} Janine Smith<br>
-      <a href="https://pastiche.io" class="pastiche-link">
+      <!-- <a href="https://pastiche.io" class="pastiche-link">
         {% include pastiche.svg %}
-        </a>
+        </a> -->
     </p>
 </footer>

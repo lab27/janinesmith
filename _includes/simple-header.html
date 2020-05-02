@@ -3,14 +3,32 @@
     {% assign page_paths = site.header_pages | default: default_paths %}
   
     <header>
-      <div class="logo">
-        <h1>Janine Smith</h1>
-      </div>
+        <div class="logo" id="logo">
+            <h2>Janine Smith</h2>
+        </div>
       {% if page_paths %}
-      <nav class="site-nav">
+
+      <nav class="large-nav">
+          <ul>
+              {% for menu in site.data.translations[page.lang].menu limit: 3 %}
+              <li class="header--menu__item{% if menu[1].url == page.url %} header--menu__item--active{% endif %}">
+                  <a href="{{ menu[1].url | relative_url }}">{{ menu[1].name }}</a>
+              </li>
+              {% endfor %}
+          </ul>
+           <div class="lang-selector">
+                  {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+                  {% for page in pages %}
+                  <a href="{{ page.url | relative_url }}" class="{{ page.lang }}">{{ page.lang }}</a> {%- if forloop.index == 1 -%}
+                     &nbsp;
+                  {%- endif -%}
+                  {% endfor %}
+                </div>
+      </nav>
+      <nav class="mobile-nav">
 
 
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" onclick="handleNavOpen()"/>
         <label for="nav-trigger">
           <div id="nav-icon4">
             <span></span>

@@ -2,37 +2,29 @@
 <html lang="{{ page.lang | default: site.lang | default: 'de' }}">
   {% include head.html %}
   <body class="{{page.class}}">
-    {% include menu.html %}
+    {% include simple-header.html %}
     <main aria-label="Content" class="{{page.title | slugify}}">
-      {{ content }}
+      <article>
+
+        <img src="/assets/img/janine-smith-portrait.jpg" alt="Photo of Janine Smith">
+        <section>
+          {{ content }}
+        </section>
+      </article>
     </main>
     {% include footer.html %}
-            <script>
-              // nav trigger
-              const el = document.querySelector('#nav-icon4');
-              const body = document.querySelector('body');
-              const myHeader = document.querySelector("header");
-              const ticker = document.querySelector(".ticker-wrap")
 
-              el.onclick = function () {
-                el.classList.toggle('open');
-                body.classList.toggle('menu-open');
-                ticker.classList.toggle('ticker-wrap--hidden');
-
-              }
-
-              const headroom = new Headroom(myHeader, {
-                "offset": 205,
-                "tolerance": 5,
-                "classes": {
-                  "initial": "animated",
-                  "pinned": "slideDown",
-                  "unpinned": "slideUp"
-                }
-              });
-              headroom.init();
-            </script>
-            <script src="{{ '/assets/js/vendor/anime.min.js' | relative_url }}"></script>
-
+    <script>
+      // handle body fixed
+      function handleNavOpen() {
+        console.log('am I handling the click?')
+        if (document.getElementById('nav-trigger').checked) 
+        {
+            document.body.classList.add('menu-open');
+          } else {
+            document.body.classList.remove('menu-open');
+        }
+      }
+    </script>
   </body>
 </html>

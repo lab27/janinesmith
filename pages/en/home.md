@@ -7,7 +7,7 @@ lang: en
 ref: home
 ---
 
-# Janine Smith
+# About Janine
 Janine Smith is  singer, songwriter, entertainer, choir director and vocal coach. Since 20 years she is performing  and inspiring her audiences in and around Germany with her blend of soul, jazz, blues and gospel.
 Janine was born and raised in Brooklyn, New York where she studied music and education. She worked as a music teacher during the day and performed in different blues clubs and cabarets in Manhattan at night.
 

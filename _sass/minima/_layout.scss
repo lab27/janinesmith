@@ -15,34 +15,43 @@
     line-height: $base-line-height * $base-font-size * 2.25; // letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+
     &,
     &:visited {
         color: $grey-color-dark;
     }
 }
 
-.site-nav {
+.mobile-nav {
     line-height: $base-line-height * $base-font-size * 2.25;
     z-index: 100;
+    right: 2rem;
+
     .nav-trigger {
         display: none;
     }
+
     .menu-icon {
         display: none;
     }
+
     .page-link {
         color: $text-color;
         line-height: $base-line-height; // Gaps between nav items, but not on the last one
+
         &:not(:last-child) {
             margin-right: 20px;
         }
-    } // @include media-query($on-palm) {
+    }
+
+    // @include media-query($on-palm) {
     position: absolute;
     top: var(--l-body-padding);
     right: var(--l-body-padding); // background-color: $background-color;
     // border: 1px solid $grey-color-light;
     border-radius: 5px;
     text-align: right;
+
     label[for="nav-trigger"] {
         display: block;
         float: right;
@@ -51,6 +60,7 @@
         z-index: 2;
         cursor: pointer;
     }
+
     .menu-icon {
         display: block;
         float: right;
@@ -59,14 +69,17 @@
         line-height: 0;
         padding-top: 10px;
         text-align: center;
+
         >svg path {
             fill: $grey-color-dark;
         }
     }
+
     input~.trigger {
         clear: both;
         display: none;
     }
+
     input:checked~.trigger {
         display: block;
         padding-bottom: 5px;
@@ -82,12 +95,14 @@
         box-sizing: border-box;
         height: 100vh;
         padding-top: 5rem;
+
         ul {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
             list-style: none;
+
             li {
                 &.active {
                     font-weight: 700;
@@ -95,17 +110,21 @@
             }
         }
     }
+
     .page-link {
         display: block;
         padding: 5px 10px;
+
         &:not(:last-child) {
             margin-right: 0;
         }
+
         margin-left: 20px;
     }
+
     @include media-query($on-palm) {
         position: relative;
-        right: auto;
+        right: 2rem;
         text-align: center;
 
         label[for="nav-trigger"] {
@@ -114,23 +133,26 @@
             margin-top: .55rem;
         }
 
-      }
-
-  .home & {
-    top: var(--l-body-padding);
-    @include media-query($on-palm) {
-        top: .5rem;
     }
-  }
-}
-.menu-open .site-nav {
-  position: absolute;
-  left: 0;
-  right: 2rem;
 
-  @include media-query($on-palm) {
-      right: 0;
-  }
+    .home & {
+        top: var(--l-body-padding);
+
+        @include media-query($on-palm) {
+            top: .5rem;
+        }
+    }
+}
+
+.menu-open .mobile-nav {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    padding: 0 2rem;
+
+    @include media-query($on-palm) {
+        right: 0;
+    }
 }
 
 /**
@@ -148,6 +170,7 @@
 .post-list {
     margin-left: 0;
     list-style: none;
+
     >li {
         margin-bottom: $spacing-unit;
     }
@@ -174,27 +197,34 @@
 .post-title {
     @include relative-font-size(2.625); // letter-spacing: -1px;
     line-height: 1;
+
     @include media-query($on-laptop) {
         @include relative-font-size(2.25);
     }
 }
 
 .post-content {
+
     // margin-bottom: $spacing-unit;
     h2 {
         @include relative-font-size(2);
+
         @include media-query($on-laptop) {
             @include relative-font-size(1.75);
         }
     }
+
     h3 {
         @include relative-font-size(1.625);
+
         @include media-query($on-laptop) {
             @include relative-font-size(1.375);
         }
     }
+
     h4 {
         @include relative-font-size(1.25);
+
         @include media-query($on-laptop) {
             @include relative-font-size(1.125);
         }

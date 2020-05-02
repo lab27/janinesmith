@@ -1,13 +1,46 @@
-$duration: 30s;
+
 :root {
-    --logo-width: 7.5rem;
-    --logo-height: 6.48rem;
+    --logo-width: 100%;
+    --logo-height: 2rem;
     --l-body-padding: 1rem;
-    --l-top-padding: 10rem;
-    --font-size: 16px;
+    --l-top-padding: 1rem;
+    --font-size: 18px;
+}
+
+.large-nav {
+    display: none;
 }
 
 @media screen and (min-width: 1200px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    .large-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        padding-right: 2rem;
+        width: 50%;
+
+        .lang-selector {
+            display: inline;
+            margin-left: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: inline;
+            margin:0;
+
+            li {
+                display: inline;
+                padding: 0 1rem;
+            }
+        }
+    }
+
     :root {
         --l-body-padding: 2rem;
     }
@@ -21,8 +54,8 @@ $duration: 30s;
 
 @media screen and (min-width: 1600px) {
     :root {
-        --logo-width: calc(7.5rem * 2);
-        --logo-height: calc(6.48rem * 2);
+        --logo-width: 50vw;
+        --logo-height: 2rem;
         --top-padding: var(--l-body-padding);
         --font-size: 21px;
     }
@@ -44,6 +77,7 @@ $duration: 30s;
 
 h1 {
     font-size: 5rem;
+    color: var(--c-fun);
 }
 
 h1,
@@ -52,12 +86,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
+    font-family: 'Engagement', cursive;
+    font-weight: 400;
 }
 
 h1,
 h2 {
-    text-align: center;
+    // text-align: left;
 }
 
 h3,
@@ -84,15 +119,23 @@ ol {
     }
 }
 
-img {
-    margin: 0 auto;
+// img {
+//     margin: 0 auto;
+// }
+
+header {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 body {
     background-color: var(--c-background);
     font-size: var(--font-size);
-    padding-top: var(--l-top-padding);
+    // padding-top: var(--l-top-padding);
     overflow-x: hidden;
+    // background: url(../assets/img/janine-smith-portrait.jpg);
 }
 
 body.menu-open {
@@ -104,9 +147,10 @@ body.home>.footer {
 }
 
 body.home {
-    padding-top: 6rem;
+    padding-top: 0;
+
     @include media-query($on-palm) {
-        padding-top: 8rem;
+        padding-top: 0;
     }
 }
 
@@ -114,7 +158,7 @@ main {
     padding: 0 2rem 2rem 2rem;
 
     @include media-query($on-palm) {
-      padding: 0 1rem 1rem 1rem;
+        padding: 0 1rem 1rem 1rem;
     }
 }
 
@@ -124,27 +168,32 @@ main {
     position: relative;
     margin-bottom: 3rem;
     width: 700px;
+
     @include media-query($on-palm) {
         margin-top: -10vw;
         max-width: 80vw;
     }
+
     .buy & {
         margin-top: 0;
     }
 
     .score-page & {
-      margin-top: 0;
+        margin-top: 0;
     }
 }
 
 .logo {
     // 750 x 648
     width: var(--logo-width);
-    height: var(--logo-height); // padding: 2rem;
+    // height: var(--logo-height); // padding: 2rem;
     // position: fixed;
     left: var(--l-body-padding);
     top: var(--l-body-padding);
     transition: fill .2s;
+    padding-left: 2rem;
+    font-size: 3rem;
+
     &:hover {
         fill: var(--hover-color);
     }
@@ -154,6 +203,7 @@ $logo_min_width: 320px;
 $logo_max_width: 1200px;
 $logo_min_font: 28px;
 $logo_max_font: 48px;
+
 .text-logo,
 .site-title h1,
 .text-logo a {
@@ -163,6 +213,7 @@ $logo_max_font: 48px;
     text-transform: uppercase;
     line-height: 1;
     margin-top: -6px; // margin-left: -1rem;
+
     // margin-right: -1rem;
     @include media-query($on-palm) {
         font-size: 8.6vw;
@@ -177,17 +228,18 @@ $logo_max_font: 48px;
 }
 
 .site-title h1 {
-  will-change: text-shadow;
-  animation-name: glow;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
+    will-change: text-shadow;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .site-title,
 .site-title-alt {
     width: 100%;
+
     h1 {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-weight: 800; // font-size: 3rem;
@@ -195,6 +247,7 @@ $logo_max_font: 48px;
         color: var(--flash--a);
         margin-bottom: 3rem;
         margin-top: 1rem;
+
         @include media-query($on-palm) {
             margin-bottom: 1rem;
         }
@@ -213,6 +266,7 @@ $logo_max_font: 48px;
 
 .page-title {
     color: var(--c-light-gray, #ccc);
+
     .home & {
         display: none;
     }
@@ -233,6 +287,7 @@ $logo_max_font: 48px;
         transform: translate3d(0, 0, 0);
         visibility: visible;
     }
+
     100% {
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
@@ -245,6 +300,7 @@ $logo_max_font: 48px;
         transform: translate3d(0, 0, 0);
         visibility: visible;
     }
+
     100% {
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
@@ -258,119 +314,83 @@ $logo_max_font: 48px;
     from {
         -webkit-filter: hue-rotate(0deg);
     }
+
     to {
         -webkit-filter: hue-rotate(-360deg);
     }
 }
 
-@keyframes glow {
-  0% {
-      text-shadow: 0 0 0 var(--flash--a);
-  }
-  100% {
-      text-shadow: 0 0 50px var(--flash--a);
-  }
-}
 
-.ticker-wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    overflow: hidden;
-    height: var(--ticker-height, 4rem);
-    background-color: var(--c-ticker-bg);
-    padding-left: 100%;
-    box-sizing: content-box;
-    transition: transform .2s var(--u-easing);
-    // animation: hue 60s infinite linear;
-    z-index: 999;
-    .ticker {
-        display: inline-block;
-        height: var(--ticker-height, 4rem);
-        line-height: var(--ticker-height);
-        white-space: nowrap;
-        padding-right: 100%;
-        box-sizing: content-box;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
-        -webkit-animation-name: ticker;
-        animation-name: ticker;
-        -webkit-animation-duration: $duration;
-        animation-duration: $duration;
-        &__item {
-            display: inline-block;
-            padding: 0 2rem;
-            font-size: 1.75rem;
-            color: var(--c-ticker);
-            font-weight: 500;
-        }
-    }
 
-    &--hidden {
-        transform: translateY(-100%);
-    }
-}
+
 
 .footer,
 .header {
     border: none;
     padding: $spacing-unit;
+
     h2 {
         // font-family: 'Playfair Display', serif;
         font-size: 1.8rem;
         line-height: 1;
-        text-transform: uppercase;
         margin: 0;
         margin-bottom: 1rem;
-        font-weight: 800;
     }
+
     .site-slogan {
         text-align: center;
+
         em {
             margin: 0 auto;
             // background-color: var(--c-cta);
             padding: .25rem;
         }
     }
+
     &--copyright {
         text-align: center;
         // color: var(--c-gray);
     }
+
     &--menu {
         display: flex;
         flex-flow: row nowrap;
         width: 100%;
         margin-bottom: 2rem;
+
         @include media-query($on-palm) {
             width: 100%;
             flex-flow: row wrap;
         }
+
         &-col {
             width: calc(100%/3);
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
+
             p {
                 margin-bottom: .5rem;
             }
+
             @include media-query($on-palm) {
                 width: 100%;
                 flex-flow: column wrap;
             }
         }
+
         &__item {
             line-height: 2;
+
             a {
                 font-weight: 500;
                 color: var(--c-text);
                 text-decoration: underline;
             }
+
             &--active {
                 font-weight: 700;
+
                 a {
                     font-weight: 700;
                     pointer-events: none;
@@ -382,8 +402,8 @@ $logo_max_font: 48px;
 }
 
 .footer {
-    background-color: #e9e9e9;
-    color: var(--c-text);
+    background-color: var(--c-footer);
+    color: var(--c-reverse);
 }
 
 .cta {
@@ -398,11 +418,14 @@ $logo_max_font: 48px;
 .lang-selector {
     text-align: center;
     margin-bottom: 0;
-    a {
+
+    a, a:visited {
         font-size: 1rem;
         border: 1px solid var(--c-text);
+        color: var(--c-text);
         padding: .5rem;
         text-transform: uppercase;
+
         &:hover {
             text-decoration: none;
         }
@@ -410,16 +433,14 @@ $logo_max_font: 48px;
 }
 
 .en:lang(en),
+.en:lang(en):visited,
+.de:lang(de):visited,
 .de:lang(de) {
     font-weight: 700;
     background-color: var(--c-text);
     color: white;
 }
 
-.logo-cutout {
-    width: 100%;
-    clip-path: url(#logoClipPath);
-}
 
 // nav
 #nav-icon4 {
@@ -436,6 +457,7 @@ $logo_max_font: 48px;
     transition: .5s ease-in-out;
     cursor: pointer;
     z-index: 100;
+
     &:hover {
         span {
             background: var(--c-hover);
@@ -488,11 +510,12 @@ $logo_max_font: 48px;
 #nav-icon4.open {
     // right: 4vw;
     margin-left: -16px;
+
     @include media-query($on-palm) {
-      margin-left: 0;
+        margin-left: 0;
     }
 
- }
+}
 
 #nav-icon4.open span {
     background-color: var(--c-logo);
@@ -519,159 +542,6 @@ $logo_max_font: 48px;
     transform: rotate(-45deg);
     top: 26px;
     left: 3px;
-} // flash
-.flash1 {
-    width: 20vw;
-    height: 20vw;
-    max-width: 500px;
-    position: relative;
-    min-width: 300px;
-    min-height: 300px;
-    margin: 0 auto;
-}
-
-.flash2,
-.flash3,
-.flash2a {
-    width: 30vw;
-    height: 26vw;
-    max-width: 500px;
-    min-width: 300px;
-    min-height: 300px;
-    margin: 0 auto;
-    position: absolute;
-    left: -2vw;
-    top: 20rem;
-    @include media-query($on-palm) {
-        width: 100%;
-        position: relative;
-        top: 0;
-        left: 0;
-    }
-    text {
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-}
-
-.flash3 {
-    right: 2vw;
-    top: auto;
-    left: auto;
-    top: 50rem;
-    transform: rotate(10deg);
-    @include media-query($on-palm) {
-        position: relative;
-        top: 0;
-        left: 0;
-    }
-}
-
-.alt {
-    .alt-flashes {
-        background-color: var(--c-smoke);
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0 -2rem;
-        padding: 2vw 10vw;
-        
-        &__item {
-            width: calc(100%/3);
-            display: flex;
-            padding: 1vw;
-        }
-    }
-    .flash2, .flash2a, .flash3 {
-        position: relative;
-        transform: none !important;
-        width: 100%;
-        height: auto;
-        max-width: none;
-        top: auto;
-        left: auto;
-        right: auto;
-        min-width: auto;
-        min-height: 300px;
-    }
-}
-
-.flash-holder {
-    @include media-query($on-palm) {
-        margin-top: -5rem;
-    }
-}
-
-.transactions {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    padding: 2rem;
-    background-color: var(--c-smoke);
-    display: grid;
-    margin-bottom: 2rem;
-    box-shadow: var(--box-shadow);
-    &>h2 {
-        text-align: left;
-        max-width: none;
-        margin: 0;
-        margin-bottom: 2rem;
-        line-height: 1.4;
-    }
-    &>h3 {
-        text-align: left;
-        margin: 0;
-    }
-    &--section {
-        margin-bottom: 2rem;
-    }
-
-    @include media-query($on-palm) {
-      font-size: 80%;
-      padding: .75rem;
-    }
-}
-
-.transaction {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) 200px 200px;
-    justify-items: start;
-    align-items: center;
-    border-bottom: 1px solid var(--c-gray);
-    padding: .25rem 0;
-    line-height: 1.4;
-    @include media-query($on-palm) {
-        grid-template-columns: 5vw 16vw auto auto;
-        .transactions--section-2.transactions--header {
-            grid-template-columns: auto auto 50px;
-        }
-    }
-    &--index {
-        color: var(--c-gray)
-    }
-    &--amount {
-        font-weight: 700;
-    }
-    &--success,
-    &--buy {
-        justify-self: end; // background-color: var(--c-success);
-        padding: 0 .25rem;
-    }
-    &--buy {
-        background: none;
-    }
-    &--header {
-        &:last-child {
-            justify-self: end;
-        }
-    }
-    &.transactions--header {
-        border-bottom-width: 2px;
-        font-weight: 700;
-        color: var(--c-gray);
-    }
 }
 
 .button {
@@ -693,16 +563,19 @@ $logo_max_font: 48px;
     line-height: 1.5;
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
     &--success {
         background-color: var(--c-success);
         color: var(--c-text);
     }
+
     &--buy-now {
         svg {
             width: 20px;
             height: 20px;
             fill: currentColor;
         }
+
         &:hover {
             background-color: var(--flash--a-shadow);
             box-shadow: 0 1px 5px rgba(black, .2);
@@ -712,6 +585,7 @@ $logo_max_font: 48px;
 
 .transactions--section-2 .transaction {
     grid-template-columns: 1fr 200px 200px;
+
     @include media-query($on-palm) {
         grid-template-columns: repeat(2, 1fr) 100px;
     }
@@ -744,6 +618,7 @@ $logo_max_font: 48px;
     justify-content: grid-start;
     flex-flow: row nowrap;
     box-shadow: inset 5px rbga(black, .2);
+
     &__page {
         padding: .5rem;
     }
@@ -751,6 +626,7 @@ $logo_max_font: 48px;
 
 .carousel-cell {
     padding: 2rem;
+
     img {
         box-shadow: 0 10px 24px rgba(black, .15);
     }
@@ -758,6 +634,7 @@ $logo_max_font: 48px;
 
 .download-link {
     max-width: var(--l-max-width);
+
     &__icon svg {
         width: 2rem;
         height: 2rem;
@@ -771,54 +648,22 @@ $logo_max_font: 48px;
 }
 
 .founders-slider {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
-.founder-slide {
-    &__number {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        margin-left: -1.5rem;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 1.5rem;
-        display: grid;
-        justify-content: center;
-        padding: .5rem;
-        box-sizing: border-box;
-        background-color: var(--flash--a);
-        z-index: 100;
-        font-weight: 700;
-    }
-    &__info {
-        position: absolute;
-        width: 40%;
-        bottom: 0;
-        left: 50%;
-        margin-left: -20%;
-        padding: 1rem;
-        background-color: var(--flash--a, orange);
-        p {
-            line-height: 1;
-            margin: 0;
-        }
-    }
-    &__name {
-        font-weight: 700;
-    }
-}
 
 .signature {
     max-width: var(--l-max-width, 800px);
     margin: 0 auto;
     padding-top: 4rem;
+
     &--row {
         width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 3rem;
     }
+
     &--cell {
         width: 45%;
         max-width: 400px;
@@ -826,19 +671,6 @@ $logo_max_font: 48px;
     }
 }
 
-.contract-download {
-    position: fixed;
-    top: 10rem;
-    @include media-query($on-desktop) {
-        position: relative;
-        top: auto;
-    }
-}
-
-.original-manuscript,
-.original-partitur {
-    padding-bottom: 0;
-}
 
 .intro-title {
     text-transform: uppercase;
@@ -854,6 +686,7 @@ blockquote {
     max-width: 30rem;
     margin: 0 auto;
     padding: 0;
+
     p {
         // background-color: var(--flash--a);
         // padding: 2rem;
@@ -864,6 +697,7 @@ blockquote {
         font-weight: 500;
         font-size: 1.5rem;
         line-height: 1.4;
+
         &:before,
         &:after {
             content: '~';
@@ -885,4 +719,19 @@ blockquote {
     width: 6vw;
     min-width: 80px;
     margin-top: 2rem;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        flex: 0 1 100%;
+        height: auto;
+        align-self: center;
+    }
 }

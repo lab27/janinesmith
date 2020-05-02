@@ -8,7 +8,7 @@ ref: home
 ---
 
 
-# Janine Smith
+# Über Janine
 Janine Smith ist Sängerin, Songwriter, Musikerin, Entertainerin, Vocal Coach und Choir Director. Seit 20 Jahren begeistert die professionelle Sängerin ihr Publikum mit vielen Auftritten aus den Bereichen Soul, Jazz, Blues und Gospel.
 Janine, wurde in Brooklyn, NY geboren. Hier studierte sie Pädagogik und Musik. Sie arbeitete als Musiklehrerin und trat als solo Sängerin in den verschiedenen Cafés, Clubs und Kabaretts in Manhattan auf.
 
