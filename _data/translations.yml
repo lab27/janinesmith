@@ -5,8 +5,8 @@ en:
       name: Home
       url: /en/
     gospelswingers:
-      name: Gospelswingers
-      url: /en/gospelswingers/
+      name: Traveling Light
+      url: /en/traveling-light/
   
 de:
   description: Janine Smith, Sängerin
@@ -15,5 +15,5 @@ de:
       name: Start
       url: /
     gospelswingers:
-      name: Gospelswingers
-      url: /gospelswingers/
+      name: Traveling Light
+      url: /traveling-light/

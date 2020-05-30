@@ -17,4 +17,4 @@ Janine ist also choir director and gospel workshop coach. She has directed many 
 
 During her performances she provides an openness to sing along and she creates special melodies and harmonies for her audiences until the room is filled with a colourful array of tone colours!
 
-Janine is currently working on her solo career as a singer, songwriter and entertainer. She still offers live music for your events plus now ‘Living Room’ concerts where the host prepares the evening for his/ her guests and Janine takes care for a cozy atmosphere with a mixture of her songs from her repertoire.
+Currently Janine is working on a new project called "Travelling Light” which is a film about her journey from New York to Europe. Click on the "Traveling Light” link find out more!
